@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Javascript claculator</title>
+</head>
+
+<body>
+<!--
+this is a simple Calculate using the simple math Operators (+, -, /, *, and %)
+only three functions where created :
+-function takeValue(x),
+-function clearInput(y),
+-function calculateResult()
+-->
+<div class="container">
+    <div class="mycalc">
+        <form name="calculator" id="calculator">
+            <input type="text" name="inputwindow" id="inputwindow" readonly>
+            <div>
+                <input type="button" id="plus" value="+" onclick="takeValue(document.getElementById('plus').value)">
+                <input type="button" id="minus" value="-" onclick="takeValue(document.getElementById('minus').value)">
+                <input type="button" id="by" value="*" onclick="takeValue(document.getElementById('by').value)">
+                <input type="button" id="devide" value="/" onclick="takeValue(document.getElementById('devide').value)">
+            </div>
+            <div class="row-col">
+                <div class="col">
+                    <div>
+                        <input type="button" id="one" value="1"
+                               onclick="takeValue(document.getElementById('one').value)">
+                        <input type="button" id="two" value="2"
+                               onclick="takeValue(document.getElementById('two').value)">
+                        <input type="button" id="three" value="3"
+                               onclick="takeValue(document.getElementById('three').value)">
+                    </div>
+
+                    <div>
+                        <input type="button" id="four" value="4"
+                               onclick="takeValue(document.getElementById('four').value)">
+                        <input type="button" id="five" value="5"
+                               onclick="takeValue(document.getElementById('five').value)">
+                        <input type="button" id="six" value="6"
+                               onclick="takeValue(document.getElementById('six').value)">
+                    </div>
+
+                    <div>
+                        <input type="button" id="seven" value="7"
+                               onclick="takeValue(document.getElementById('seven').value)">
+                        <input type="button" id="eight" value="8"
+                               onclick="takeValue(document.getElementById('eight').value)">
+                        <input type="button" id="nine" value="9"
+                               onclick="takeValue(document.getElementById('nine').value)">
+                    </div>
+
+                    <div>
+                        <input type="button" id="zero" value="0"
+                               onclick="takeValue(document.getElementById('zero').value)">
+                        <input type="button" id="decimal" value="."
+                               onclick="takeValue(document.getElementById('decimal').value)">
+                        <input type="button" id="percent" value="%"
+                               onclick="takeValue(document.getElementById('percent').value)">
+                    </div>
+                </div>
+                <div class="col-1">
+                    <div class="results">
+                        <input type="button" id="equal" value="=" onclick="calculateResult()">
+                        <button type="button" id="clear" value=""
+                                onclick="clearInput(document.getElementById('clear').value)">
+                            Clear
+                        </button>
+
+                    </div>
+                </div>
+            </div>
+
+
+
+    <script>
+        //Function to to take, hold and print the end product of the calculation where the input id is 'inputwindow'
+        function takeValue(x) {
+            document.getElementById('inputwindow').value += x;
+        }
+
+        function clearInput(y) {
+            document.getElementById('inputwindow').value = y;
+        }
+
+        function calculateResult() {
+            var result = eval(document.getElementById('inputwindow').value);
+                document.getElementById('inputwindow').value = result;
+        }
+    </script>
+    </form>
+</div>
+
+
+</body>
+
+</html>
